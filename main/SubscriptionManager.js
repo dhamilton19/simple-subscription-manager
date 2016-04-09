@@ -25,7 +25,7 @@ export default class SubscriptionManager {
 
 	static publish(key, data) {
 		if (this.subscriptions[key]) {
-			for (let component of this.subscriptions[key]) {
+			for (const component of this.subscriptions[key]) {
 				if (component.on) component.on({[key]: data});
 			}
 		}
